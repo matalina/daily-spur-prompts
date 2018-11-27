@@ -9,4 +9,9 @@ return [
         'secret' => env('UNSPLASH_SECRET_KEY'),
         'name' => env('UNSPLASH_APP_NAME'),
     ],
+    'spotify' => [
+        'id' => env('SPOTIFY_CLIENT_ID'),
+        'secret' => env('SPOTIFY_CLIENT_SECRET'),
+        'uri' => '',
+    ],
 ];
