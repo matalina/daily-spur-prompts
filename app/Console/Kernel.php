@@ -21,6 +21,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('daily:word')->dailyAt('0:00');
         $schedule->command('daily:photo')->dailyAt('03:00');
+        $schedule->command('daily:track')->dailyAt('06:00');
     }
 
     /**
