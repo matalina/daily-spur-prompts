@@ -56,14 +56,27 @@ class TrackOfTheDay extends Command
         $letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
         $index = array_rand($letter);
 
-        $offset = mt_rand(1,10000);
+        $offset = mt_rand(1,100);
 
         $options = [
             'limit' => 1,
             'offset' => $offset,
         ];
+        $looking = true;
+        $count = 0;
+        while($looking) {
+            $count++;
+            try {
+                $tracks = $this->spotify->search($letter[$index] . '*', 'track', $options);
+            }
+            catch(\Exception $e) {
+                $offset = mt_rand(1,100);
+                continue;
+            }
+            $looking = false;
+            dump($count);
+        }
 
-        $tracks = $this->spotify->search($letter[$index].'*', 'track', $options);
 
         $mail = new TrackPrompt($tracks->tracks->items[0]);
 

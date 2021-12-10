@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Mail\PhotoPrompt;
-use Crew\Unsplash\HttpClient;
-use Crew\Unsplash\Photo;
+use Unsplash\HttpClient;
+use Unsplash\Photo;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
 

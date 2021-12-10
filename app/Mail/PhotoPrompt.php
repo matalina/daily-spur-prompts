@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use Crew\Unsplash\Photo;
+use Unsplash\Photo;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
